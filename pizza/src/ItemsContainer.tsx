@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { PizzaType } from './constants/constatnts';
 
 type ItemsContainerType = {
@@ -13,7 +12,6 @@ export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines}: It
   return (
     <>
       <button onClick={() => addCountPlus()}>x</button>
-      <h1>{items[count].title}</h1>
       <div>
         <h1>{items[count].title}</h1>
         <p>{items[count].desc}</p>

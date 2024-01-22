@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
-import './App.css';
 import { PIZZA } from './constants/constatnts';
 import { ItemsContainer } from './ItemsContainer';
+import styles from './App.module.css';
+import { Header } from './Header/Header';
 
-function App() {
+export function App() {
   const [items, setItems] = useState(PIZZA);
   let [count, setCount] = useState(0);
   function addCountPlus() {
-    setCount(++count);
+    if(count === items.length - 1) {
+      setCount(0);
+    } else {
+      setCount(++count);
+    }
   }
   function addCountMines() {
-    setCount(--count);
+    if(count === 0) {
+      setCount(count = items.length - 1);
+    } else {
+      setCount(--count);
+    }
   }
   return (
-    <div>
+    <div className={styles.content}>
+      <Header />
       <ItemsContainer items={items} count={count} addCountPlus={addCountPlus} addCountMines={addCountMines}/>
     </div>
   );
 }
-
-export default App;
