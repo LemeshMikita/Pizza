@@ -9,9 +9,12 @@ function App() {
   function addCountPlus() {
     setCount(++count);
   }
+  function addCountMines() {
+    setCount(--count);
+  }
   return (
     <div>
-      <ItemsContainer items={items} count={count} addCountPlus={addCountPlus}/>
+      <ItemsContainer items={items} count={count} addCountPlus={addCountPlus} addCountMines={addCountMines}/>
     </div>
   );
 }
