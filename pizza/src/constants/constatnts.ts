@@ -1,9 +1,9 @@
-type PizzaType = {
-    title: String,
-    desc: String,
-    price: String,
-    photo: String,
-    diameter: String
+export type PizzaType = {
+    title: string,
+    desc: string,
+    price: string,
+    photo: string,
+    diameter: string
 }
 
 export const PIZZA: Array<PizzaType> = [
