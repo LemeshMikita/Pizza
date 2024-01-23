@@ -24,7 +24,10 @@ export function App() {
   return (
     <div className={styles.content}>
       <Header />
-      <ItemsContainer items={items} count={count} addCountPlus={addCountPlus} addCountMines={addCountMines}/>
+      <div className={styles.div__wrapper}>
+        <ItemsContainer items={items} count={count} addCountPlus={addCountPlus} addCountMines={addCountMines}/>
+        <ItemsContainer items={items} count={count} addCountPlus={addCountPlus} addCountMines={addCountMines}/>
+      </div>
     </div>
   );
 }

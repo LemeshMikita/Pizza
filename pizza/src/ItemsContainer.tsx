@@ -1,5 +1,6 @@
 import React from 'react';
 import { PizzaType } from './constants/constatnts';
+import styles from './itemsContainer.module.css';
 
 type ItemsContainerType = {
     items: Array<PizzaType>,
@@ -10,7 +11,7 @@ type ItemsContainerType = {
 
 export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines}: ItemsContainerType) => {
   return (
-    <>
+    <div className={styles.div__items}>
       <button onClick={() => addCountPlus()}>x</button>
       <div>
         <h1>{items[count].title}</h1>
@@ -18,6 +19,6 @@ export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines}: It
         <img src={items[count].photo} alt={items[count].title} style={{width: '70px', height: '70px'}}/>
       </div>
       <button onClick={() => addCountMines()}>x</button>
-    </>
+    </div>
   );
 };
