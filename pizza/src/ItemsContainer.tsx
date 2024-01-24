@@ -14,13 +14,13 @@ type ItemsContainerType = {
 export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines}: ItemsContainerType) => {
   return (
     <div className={styles.div__items}>
-      <button onClick={() => addCountPlus()} className={styles.btn}>
+      <button onClick={() => addCountPlus()} className={styles.btn__top}>
         <FontAwesomeIcon icon={ faChevronUp } />
       </button>
-      <div>
+      <div className={styles.aa}>
         <h3>{items[count].title}</h3>
         <p>{items[count].desc}</p>
-        <img src={items[count].photo} alt={items[count].title} style={{width: '150px', height: '150px'}}/>
+        <img src={items[count].photo} alt={items[count].title} className={styles.image}/>
         <p>{items[count].diameter}</p>
         <p>{`${items[count].price}$`}</p>
       </div>
