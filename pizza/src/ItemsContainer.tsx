@@ -8,16 +8,18 @@ type ItemsContainerType = {
     items: Array<PizzaType>,
     count: number,
     addCountPlus: () => void,
-    addCountMines: () => void
+    addCountMines: () => void,
+    left: boolean
 }
 
-export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines}: ItemsContainerType) => {
+
+export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, left }: ItemsContainerType) => {
   return (
     <div className={styles.div__items}>
       <button onClick={() => addCountPlus()} className={styles.btn__top}>
         <FontAwesomeIcon icon={ faChevronUp } />
       </button>
-      <div className={styles.aa}>
+      <div className={left ? styles.image__contentleft : styles.image__contentright}>
         <h3>{items[count].title}</h3>
         <p>{items[count].desc}</p>
         <img src={items[count].photo} alt={items[count].title} className={styles.image}/>

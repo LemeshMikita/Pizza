@@ -8,6 +8,7 @@ export function App() {
   const [items, setItems] = useState(PIZZA);
   let [countLeft, setCountLeft] = useState(0);
   let [countRight, setCountRight] = useState(0);
+
   function addCountPlusLeft() {
     countLeft === items.length - 1 ? setCountLeft(0) : setCountLeft(++countLeft);
   }
@@ -24,8 +25,18 @@ export function App() {
     <div className={styles.content}>
       <Header />
       <div className={styles.div__wrapper}>
-        <ItemsContainer items={items} count={countLeft} addCountPlus={addCountPlusLeft} addCountMines={addCountMinesLeft}/>
-        <ItemsContainer items={items} count={countRight} addCountPlus={addCountPlusRight} addCountMines={addCountMinesRight}/>
+        <ItemsContainer 
+          items={items}
+          count={countLeft}
+          addCountPlus={addCountPlusLeft} 
+          addCountMines={addCountMinesLeft} 
+          left={true}/>
+        <ItemsContainer
+          items={items} 
+          count={countRight}
+          addCountPlus={addCountPlusRight}
+          addCountMines={addCountMinesRight}
+          left={false}/>
       </div>
     </div>
   );
