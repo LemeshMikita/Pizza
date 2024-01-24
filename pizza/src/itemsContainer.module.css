@@ -1,4 +1,12 @@
 .div__items {
     display: flex;
     flex-direction: column;
+    width: 390px;
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
 }
