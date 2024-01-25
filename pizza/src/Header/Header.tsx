@@ -3,8 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import styles from './Header.module.css';
 import { Modal } from '../Modal/Modal';
+import { PizzaType } from '../constants/constatnts';
 
-export const Header = () => {
+export type ArrCartType = {
+  arrCart: Array<PizzaType>
+}
+
+export const Header = ({ arrCart }: ArrCartType) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function openModal() {
     setIsModalOpen(true);
@@ -14,7 +19,7 @@ export const Header = () => {
       <h1 className={styles.header__titel}>Double pizza</h1>
       <div onClick={openModal}>
         <FontAwesomeIcon icon={faTrashCan} />
-        <Modal open={isModalOpen} />
+        <Modal open={isModalOpen} arrCart={arrCart}/>
       </div>
     </div>
   );

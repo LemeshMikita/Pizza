@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PIZZA } from './constants/constatnts';
+import { PIZZA, PizzaType } from './constants/constatnts';
 import { ItemsContainer } from './ItemsContainer';
 import styles from './App.module.css';
 import { Header } from './Header/Header';
@@ -8,7 +8,7 @@ export function App() {
   const [items, setItems] = useState(PIZZA);
   const [countLeft, setCountLeft] = useState(0);
   const [countRight, setCountRight] = useState(0);
-  const arrCart: any = [];
+  const arrCart: Array<PizzaType> = [];
 
   function addCountPlusLeft() {
     countLeft === items.length - 1 ? setCountLeft(0) : setCountLeft(countLeft + 1);
@@ -30,7 +30,7 @@ export function App() {
   }
   return (
     <div className={styles.content}>
-      <Header />
+      <Header arrCart={arrCart}/>
       <div className={styles.div__wrapper}>
         <ItemsContainer 
           items={items}
