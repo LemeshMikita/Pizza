@@ -22,15 +22,14 @@ export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, lef
         <h3 className={styles.title}>{items[count].title}</h3>
         <p className={styles.p__descr}>{items[count].desc}</p>
         <button onClick={() => addCountPlus()} className={styles.btn__top}>
-        <FontAwesomeIcon icon={ faChevronUp } />
-      </button>
+          <FontAwesomeIcon icon={ faChevronUp } />
+        </button>
         <img src={items[count].photo} alt={items[count].title} className={styles.image}/>
         <button onClick={() => addCountMines()} className={styles.btn__bottom}>
-        <FontAwesomeIcon icon={ faChevronDown } />
-      </button>
+          <FontAwesomeIcon icon={ faChevronDown } />
+        </button>
         <p>{items[count].diameter}</p>
         <p>{`${items[count].price}$`}</p>
-
       </div>
       <button onClick={addToCart} id={idButton}>Add</button>
     </div>

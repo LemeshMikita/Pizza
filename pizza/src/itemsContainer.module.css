@@ -28,6 +28,7 @@
     height: 30px;
     border-radius: 50%;
     border: none;
+    margin-top: 80px;
 }
 
 .image__contentleft {
@@ -42,6 +43,14 @@
 }
 
 .image__contentright .btn__top {
+    align-self: center;
+}
+
+.image__contentleft .btn__bottom {
+    align-self: center;
+}
+
+.image__contentright .btn__bottom {
     align-self: center;
 }
 
