@@ -9,11 +9,13 @@ type ItemsContainerType = {
     count: number,
     addCountPlus: () => void,
     addCountMines: () => void,
-    left: boolean
+    addToCart: (e: React.MouseEvent<HTMLElement>) => void,
+    left: boolean,
+    idButton: string
 }
 
 
-export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, left }: ItemsContainerType) => {
+export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, left, addToCart, idButton }: ItemsContainerType) => {
   return (
     <div className={styles.div__items}>
       <button onClick={() => addCountPlus()} className={styles.btn__top}>
@@ -29,6 +31,7 @@ export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, lef
       <button onClick={() => addCountMines()} className={styles.btn}>
         <FontAwesomeIcon icon={ faChevronDown } />
       </button>
+      <button onClick={addToCart} id={idButton}>Add</button>
     </div>
   );
 };
