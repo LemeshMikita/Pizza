@@ -18,19 +18,20 @@ type ItemsContainerType = {
 export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, left, addToCart, idButton }: ItemsContainerType) => {
   return (
     <div className={styles.div__items}>
-      <button onClick={() => addCountPlus()} className={styles.btn__top}>
+      <div className={left ? styles.image__contentleft : styles.image__contentright}>
+        <h3 className={styles.title}>{items[count].title}</h3>
+        <p className={styles.p__descr}>{items[count].desc}</p>
+        <button onClick={() => addCountPlus()} className={styles.btn__top}>
         <FontAwesomeIcon icon={ faChevronUp } />
       </button>
-      <div className={left ? styles.image__contentleft : styles.image__contentright}>
-        <h3>{items[count].title}</h3>
-        <p>{items[count].desc}</p>
         <img src={items[count].photo} alt={items[count].title} className={styles.image}/>
-        <p>{items[count].diameter}</p>
-        <p>{`${items[count].price}$`}</p>
-      </div>
-      <button onClick={() => addCountMines()} className={styles.btn}>
+        <button onClick={() => addCountMines()} className={styles.btn__bottom}>
         <FontAwesomeIcon icon={ faChevronDown } />
       </button>
+        <p>{items[count].diameter}</p>
+        <p>{`${items[count].price}$`}</p>
+
+      </div>
       <button onClick={addToCart} id={idButton}>Add</button>
     </div>
   );

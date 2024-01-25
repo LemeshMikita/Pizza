@@ -1,13 +1,29 @@
 .div__items {
-    display: flex;
-    flex-direction: column;
     width: 295px;
     margin: 0;
 }
 
 .btn__top {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    margin-top: 15px;
+}
+
+.title {
+    margin-top: 0;
+}
+
+.p__descr {
+    margin: 0;
+    font-size: 14px;
+    height: 50px;
+}
+
+.btn__bottom {
     position: absolute;
-    top: 100px;
+    top: 700px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -17,15 +33,31 @@
 .image__contentleft {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: end;
     overflow: hidden;
+}
+
+.image__contentleft .btn__top {
+    align-self: center;
+}
+
+.image__contentright .btn__top {
+    align-self: center;
+}
+
+.image__contentleft .image {
+    align-self: start;
 }
 
 .image__contentright {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     overflow: hidden;
+}
+
+.image__contentright .image {
+    align-self: end;
 }
 
 .image {
