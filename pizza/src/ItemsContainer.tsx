@@ -28,10 +28,12 @@ export const ItemsContainer = ({ items, count,  addCountPlus, addCountMines, lef
         <button onClick={() => addCountMines()} className={styles.btn__bottom}>
           <FontAwesomeIcon icon={ faChevronDown } />
         </button>
-        <p>{items[count].diameter}</p>
-        <p>{`${items[count].price}$`}</p>
+        <div className={styles.div__bottom}>
+          <p>Diametr: {items[count].diameter}</p>
+          <p>Prise: {`${items[count].price}$`}</p>
+          <button onClick={addToCart} id={idButton} className={styles.btn__add}>Add To Cart</button>
+        </div>
       </div>
-      <button onClick={addToCart} id={idButton}>Add</button>
     </div>
   );
 };

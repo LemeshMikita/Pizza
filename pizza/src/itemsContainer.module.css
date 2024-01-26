@@ -72,3 +72,23 @@
 .image {
     object-fit: cover;
 }
+
+.div__bottom {
+    display: flex;
+    margin-top: 50px;
+    width: 290px;
+    justify-content: space-between;
+}
+
+.image__contentright .div__bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 290px;
+    justify-content: space-between;
+}
+
+.btn__add {
+    background-color: aqua;
+    height: 40px;
+    border: none;
+}
