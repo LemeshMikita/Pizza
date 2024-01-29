@@ -14,12 +14,15 @@ export const Header = ({ arrCart }: ArrCartType) => {
   function openModal() {
     setIsModalOpen(true);
   }
+  function closeModal() {
+    setIsModalOpen(false);
+  }
   return (
     <div className={styles.header}>
       <h1 className={styles.header__titel}>Double pizza</h1>
-      <div onClick={openModal}>
-        <FontAwesomeIcon icon={faTrashCan} />
-        <Modal open={isModalOpen} arrCart={arrCart}/>
+      <div>
+        <FontAwesomeIcon icon={faTrashCan}  onClick={openModal}/>
+        <Modal open={isModalOpen} arrCart={arrCart} closeModal={() => {setIsModalOpen(false);}}/>
       </div>
     </div>
   );
